@@ -4,17 +4,275 @@
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Intelligent Extraction | Document.One AI</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script>tailwind.config={theme:{extend:{colors:{primary:"#1b35e7",primarycontainer:"#3e54ff",secondary:"#4f5b91",surface:"#f7fafd"},fontFamily:{headline:["Manrope"],body:["Inter"]}}}}</script>
-<style>.material-symbols-outlined{font-variation-settings:'FILL'0,'wght'400,'GRAD'0,'opsz'24}</style>
+<script>tailwind.config={theme:{extend:{colors:{primary:"#1b35e7",primarycontainer:"#3e54ff",secondary:"#4f5b91",surface:"#f7fafd"},fontFamily:{headline: ["Inter"],body:["Inter"]}}}}</script>
+<style>.material-symbols-outlined{font-variation-settings:'FILL'0,'wght'400,'GRAD'0,'opsz'24}
+.products-mega-menu { opacity: 0; pointer-events: none; transform: translateX(-50%) translateY(8px); transition: opacity 0.2s ease, transform 0.2s ease; }
+.products-mega-wrap:hover .products-mega-menu { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.dropdown-menu { display: none; }
+.dropdown:hover .dropdown-menu { display: block; }
+</style>
 </head>
 <body class="bg-surface text-[#181c1e] font-body">
-<header class="bg-[#f7fafd]/90 sticky top-0 z-50 border-b border-[#c5c5d9]/20">
-<nav class="flex justify-between items-center px-6 lg:px-12 py-4 max-w-screen-2xl mx-auto">
-  <a href="index.html" class="text-xl font-bold tracking-tighter text-[#1b35e7] font-headline">Document.One AI</a>
-  <a href="demo.html" class="bg-gradient-to-r from-[#1b35e7] to-[#3e54ff] text-white px-5 py-2.5 rounded-lg font-semibold text-sm shadow-lg">Free Demo</a>
+<!-- TopNavBar -->
+<header class="bg-[#f7fafd]/90 dark:bg-[#0d1b4e] docked full-width top-0 sticky z-50 border-b border-outline-variant/10">
+<nav class="flex justify-between items-center px-6 lg:px-12 py-4 w-full max-w-screen-2xl mx-auto">
+  <!-- Logo -->
+  <a href="index.html" class="flex items-center gap-2">
+    <span class="text-xl font-bold tracking-tighter text-[#1b35e7] dark:text-white font-headline">Document.One AI</span>
+  </a>
+
+  <!-- Desktop Nav -->
+  <div class="hidden lg:flex items-center gap-1 font-['Manrope'] font-semibold tracking-wide text-sm">
+    <!-- Products Mega Menu -->
+    <div class="products-mega-wrap relative">
+      <button id="products-btn" class="flex items-center gap-1 text-[#4f5b91] dark:text-slate-300 hover:text-[#3e54ff] dark:hover:text-white px-4 py-2 rounded-lg transition-colors">
+        Products <span class="material-symbols-outlined text-base">expand_more</span>
+      </button>
+      <!-- Mega Menu Panel -->
+      <div id="products-mega" class="products-mega-menu absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[720px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-outline-variant/20 p-6 z-50 hidden">
+        <div class="grid grid-cols-3 gap-6">
+          <!-- Platforms Column -->
+          <div>
+            <p class="text-[0.6rem] font-bold tracking-widest uppercase text-secondary mb-4 font-label">Platforms</p>
+            <a href="content-hub.html" class="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5">folder_managed</span>
+              <div>
+                <div class="font-semibold text-sm text-on-surface group-hover:text-primary transition-colors font-headline">Content Hub</div>
+                <div class="text-xs text-secondary mt-0.5">AI-enriched document management</div>
+              </div>
+            </a>
+            <a href="intelligent-extraction.html" class="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5">psychology</span>
+              <div>
+                <div class="font-semibold text-sm text-on-surface group-hover:text-primary transition-colors font-headline">Intelligent Extraction</div>
+                <div class="text-xs text-secondary mt-0.5">Multi-modal AI extraction</div>
+              </div>
+            </a>
+            <a href="intelligent-automation.html" class="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5">smart_toy</span>
+              <div>
+                <div class="font-semibold text-sm text-on-surface group-hover:text-primary transition-colors font-headline">Intelligent Automation</div>
+                <div class="text-xs text-secondary mt-0.5">End-to-end task fulfillment</div>
+              </div>
+            </a>
+          </div>
+          <!-- Integrations Column -->
+          <div>
+            <p class="text-[0.6rem] font-bold tracking-widest uppercase text-secondary mb-4 font-label">Integrations</p>
+            <a href="integrations.html" class="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5">electrical_services</span>
+              <div>
+                <div class="font-semibold text-sm text-on-surface group-hover:text-primary transition-colors font-headline">All Integrations</div>
+                <div class="text-xs text-secondary mt-0.5">Connect your enterprise stack</div>
+              </div>
+            </a>
+            <a href="integration-webmethods.html" class="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5">account_tree</span>
+              <div>
+                <div class="font-semibold text-sm text-on-surface group-hover:text-primary transition-colors font-headline">WebMethods</div>
+                <div class="text-xs text-secondary mt-0.5">Integration Server 12</div>
+              </div>
+            </a>
+            <a href="integration-filenet.html" class="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5">database</span>
+              <div>
+                <div class="font-semibold text-sm text-on-surface group-hover:text-primary transition-colors font-headline">IBM Filenet</div>
+                <div class="text-xs text-secondary mt-0.5">Enterprise content management</div>
+              </div>
+            </a>
+            <a href="integration-alfresco.html" class="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5">folder_open</span>
+              <div>
+                <div class="font-semibold text-sm text-on-surface group-hover:text-primary transition-colors font-headline">Alfresco</div>
+                <div class="text-xs text-secondary mt-0.5">Open source ECM</div>
+              </div>
+            </a>
+            <a href="integration-sharepoint.html" class="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5">cloud</span>
+              <div>
+                <div class="font-semibold text-sm text-on-surface group-hover:text-primary transition-colors font-headline">Sharepoint</div>
+                <div class="text-xs text-secondary mt-0.5">Microsoft 365 integration</div>
+              </div>
+            </a>
+            <a href="integration-documentum.html" class="flex items-start gap-3 px-3 py-3 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5">storage</span>
+              <div>
+                <div class="font-semibold text-sm text-on-surface group-hover:text-primary transition-colors font-headline">Documentum</div>
+                <div class="text-xs text-secondary mt-0.5">EMC enterprise content</div>
+              </div>
+            </a>
+          </div>
+          <!-- Solutions Column -->
+          <div>
+            <p class="text-[0.6rem] font-bold tracking-widest uppercase text-secondary mb-4 font-label">Solutions</p>
+            <p class="text-[0.6rem] font-bold tracking-widest uppercase text-on-surface-variant px-3 mb-1 font-label">Case Studies</p>
+            <a href="case-study-ap.html" class="flex items-start gap-3 px-3 py-2 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-lg mt-0.5">receipt_long</span>
+              <div>
+                <div class="font-semibold text-xs text-on-surface group-hover:text-primary transition-colors font-headline">Accounts Payable</div>
+              </div>
+            </a>
+            <a href="case-study-claims.html" class="flex items-start gap-3 px-3 py-2 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-lg mt-0.5">verified_user</span>
+              <div>
+                <div class="font-semibold text-xs text-on-surface group-hover:text-primary transition-colors font-headline">Claims Management</div>
+              </div>
+            </a>
+            <a href="case-study-student.html" class="flex items-start gap-3 px-3 py-2 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-lg mt-0.5">school</span>
+              <div>
+                <div class="font-semibold text-xs text-on-surface group-hover:text-primary transition-colors font-headline">Student Companion</div>
+              </div>
+            </a>
+            <a href="case-study-order.html" class="flex items-start gap-3 px-3 py-2 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-lg mt-0.5">shopping_cart</span>
+              <div>
+                <div class="font-semibold text-xs text-on-surface group-hover:text-primary transition-colors font-headline">Order Management</div>
+              </div>
+            </a>
+            <p class="text-[0.6rem] font-bold tracking-widest uppercase text-on-surface-variant px-3 mb-1 mt-3 font-label">By Industry</p>
+            <a href="industry-manufacturing.html" class="flex items-start gap-3 px-3 py-2 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-lg mt-0.5">precision_manufacturing</span>
+              <div>
+                <div class="font-semibold text-xs text-on-surface group-hover:text-primary transition-colors font-headline">Manufacturing</div>
+              </div>
+            </a>
+            <a href="industry-insurance.html" class="flex items-start gap-3 px-3 py-2 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-lg mt-0.5">security</span>
+              <div>
+                <div class="font-semibold text-xs text-on-surface group-hover:text-primary transition-colors font-headline">Insurance</div>
+              </div>
+            </a>
+            <a href="industry-logistics.html" class="flex items-start gap-3 px-3 py-2 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-lg mt-0.5">local_shipping</span>
+              <div>
+                <div class="font-semibold text-xs text-on-surface group-hover:text-primary transition-colors font-headline">Logistics</div>
+              </div>
+            </a>
+            <a href="industry-other.html" class="flex items-start gap-3 px-3 py-2 rounded-xl hover:bg-surface-container-low transition-colors group">
+              <span class="material-symbols-outlined text-primary text-lg mt-0.5">domain</span>
+              <div>
+                <div class="font-semibold text-xs text-on-surface group-hover:text-primary transition-colors font-headline">Other Industries</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- Bottom strip -->
+        <div class="mt-4 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+          <div class="flex gap-4">
+            <a href="about.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-surface-container-low transition-colors">
+              <span class="material-symbols-outlined text-primary text-sm">business</span>
+              <span class="text-xs font-semibold">About Us</span>
+            </a>
+            <a href="what-is-docone.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-surface-container-low transition-colors">
+              <span class="material-symbols-outlined text-primary text-sm">info</span>
+              <span class="text-xs font-semibold">What is Document.One AI</span>
+            </a>
+            <a href="contact.html" class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-surface-container-low transition-colors">
+              <span class="material-symbols-outlined text-primary text-sm">mail</span>
+              <span class="text-xs font-semibold">Contact</span>
+            </a>
+          </div>
+          <a href="demo.html" class="bg-gradient-to-r from-primary to-primary-container text-white px-4 py-2 rounded-lg font-semibold text-xs shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all">
+            Free Demo →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources Dropdown -->
+    <div class="dropdown relative">
+      <button class="flex items-center gap-1 text-[#4f5b91] dark:text-slate-300 hover:text-[#3e54ff] dark:hover:text-white px-4 py-2 rounded-lg transition-colors">
+        Resources <span class="material-symbols-outlined text-base">expand_more</span>
+      </button>
+      <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-outline-variant/20 p-3 z-50">
+        <a href="faq.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors">
+          <span class="material-symbols-outlined text-primary text-lg">help</span>
+          <div><div class="font-semibold text-sm text-on-surface">FAQ</div><div class="text-xs text-secondary">Frequently asked questions</div></div>
+        </a>
+        <a href="api-docs.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors">
+          <span class="material-symbols-outlined text-primary text-lg">code</span>
+          <div><div class="font-semibold text-sm text-on-surface">API Documentation</div><div class="text-xs text-secondary">Developer reference</div></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Company Dropdown -->
+    <div class="dropdown relative">
+      <button class="flex items-center gap-1 text-[#4f5b91] dark:text-slate-300 hover:text-[#3e54ff] dark:hover:text-white px-4 py-2 rounded-lg transition-colors">
+        Company <span class="material-symbols-outlined text-base">expand_more</span>
+      </button>
+      <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-outline-variant/20 p-3 z-50">
+        <a href="about.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors">
+          <span class="material-symbols-outlined text-primary text-lg">business</span>
+          <div><div class="font-semibold text-sm text-on-surface">About Us</div><div class="text-xs text-secondary">Our story and team</div></div>
+        </a>
+        <a href="what-is-docone.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors">
+          <span class="material-symbols-outlined text-primary text-lg">info</span>
+          <div><div class="font-semibold text-sm text-on-surface">What is Document.One AI</div><div class="text-xs text-secondary">Learn about our platform</div></div>
+        </a>
+        <a href="contact.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors">
+          <span class="material-symbols-outlined text-primary text-lg">mail</span>
+          <div><div class="font-semibold text-sm text-on-surface">Contact Us</div><div class="text-xs text-secondary">Get in touch</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA + Mobile Menu -->
+  <div class="flex items-center gap-3">
+    <a href="demo.html" class="bg-gradient-to-r from-primary to-primary-container text-white px-5 py-2.5 rounded-lg font-semibold text-sm shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all active:scale-95">
+      Free Demo
+    </a>
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+      <span class="material-symbols-outlined text-2xl">menu</span>
+    </button>
+  </div>
 </nav>
+
+<!-- Mobile Nav -->
+<div id="mobile-menu" class="lg:hidden hidden bg-white/95 backdrop-blur-xl border-t border-outline-variant/20 px-6 py-4 max-h-[80vh] overflow-y-auto">
+  <div class="space-y-1">
+    <div class="py-2">
+      <p class="text-[0.6rem] font-bold tracking-widest uppercase text-secondary px-2 mb-1">Platforms</p>
+      <a href="content-hub.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm font-medium">Content Hub</a>
+      <a href="intelligent-extraction.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm font-medium">Intelligent Extraction</a>
+      <a href="intelligent-automation.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm font-medium">Intelligent Automation</a>
+    </div>
+    <div class="border-t border-outline-variant/20 py-2">
+      <p class="text-[0.6rem] font-bold tracking-widest uppercase text-secondary px-2 mb-1">Integrations</p>
+      <a href="integration-webmethods.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">WebMethods</a>
+      <a href="integration-filenet.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">Filenet</a>
+      <a href="integration-alfresco.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">Alfresco</a>
+      <a href="integration-sharepoint.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">Sharepoint</a>
+      <a href="integration-documentum.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">Documentum</a>
+    </div>
+    <div class="border-t border-outline-variant/20 py-2">
+      <p class="text-[0.6rem] font-bold tracking-widest uppercase text-secondary px-2 mb-1">Solutions</p>
+      <a href="case-study-ap.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">Accounts Payable</a>
+      <a href="case-study-claims.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">Claims Management</a>
+      <a href="case-study-student.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">Student Companion</a>
+      <a href="case-study-order.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">Order Management</a>
+    </div>
+    <div class="border-t border-outline-variant/20 py-2">
+      <p class="text-[0.6rem] font-bold tracking-widest uppercase text-secondary px-2 mb-1">Resources</p>
+      <a href="faq.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">FAQ</a>
+      <a href="api-docs.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">API Documentation</a>
+    </div>
+    <div class="border-t border-outline-variant/20 py-2">
+      <p class="text-[0.6rem] font-bold tracking-widest uppercase text-secondary px-2 mb-1">Company</p>
+      <a href="about.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">About Us</a>
+      <a href="what-is-docone.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">What is Document.One AI</a>
+      <a href="contact.html" class="block px-3 py-2 rounded-lg hover:bg-surface-container-low text-sm">Contact Us</a>
+    </div>
+    <div class="border-t border-outline-variant/20 pt-3">
+      <a href="demo.html" class="block bg-gradient-to-r from-primary to-primary-container text-white text-center px-5 py-3 rounded-lg font-semibold text-sm shadow-lg">Free Demo</a>
+    </div>
+  </div>
+</div>
 </header>
 <main class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24">
   <div class="text-center mb-16">
